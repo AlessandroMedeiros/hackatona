@@ -2,7 +2,6 @@ package engenharia.software.hackatona.pucrs.service;
 
 import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
-import engenharia.software.hackatona.pucrs.model.TimeModel;
 import engenharia.software.hackatona.pucrs.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

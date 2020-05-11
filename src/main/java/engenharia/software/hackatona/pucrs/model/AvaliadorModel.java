@@ -12,7 +12,8 @@ public class AvaliadorModel implements Serializable {
     public AvaliadorModel(){
     }
 
-    public AvaliadorModel(String nome) {
+    public AvaliadorModel(Integer id, String nome) {
+        this.id = id;
         this.nome = nome;
     }
 

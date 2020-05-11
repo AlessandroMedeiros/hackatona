@@ -1,0 +1,9 @@
+select * from aluno;
+select * from time;
+select * from avaliador;
+
+
+
+drop table aluno;
+drop table time;
+drop table avaliador;
