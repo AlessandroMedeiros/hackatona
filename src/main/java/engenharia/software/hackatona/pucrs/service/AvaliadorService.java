@@ -27,15 +27,17 @@ public class AvaliadorService {
 
 
     public boolean deletarAvaliador(Integer id){
-        List<AvaliadorModel> time = listarAvaliadores();
-        //Implementar com java 8 stream, lambda, filter e forEach
-        //time.stream().filter(t -> t.equals(id)).
-        for(int i=0; i<time.size(); i++){
-            if(time.get(i).getId().equals(id)){
-                avalidorRepository.delete(time.get(i));
-                return true;
-            }
-        }
-        return false;
+        List<AvaliadorModel> avaliadores = listarAvaliadores();
+
+        AvaliadorModel av = avaliadores
+                            .stream()
+                            .filter(a -> a.equals(id))
+                            .findFirst()
+                            .get();
+
+        if(av!=null){
+            avalidorRepository.delete(av);
+            return true;
+        }else return false;
     }
 }
