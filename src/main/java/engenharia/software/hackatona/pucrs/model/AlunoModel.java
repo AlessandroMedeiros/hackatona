@@ -17,6 +17,7 @@ public class AlunoModel implements Serializable {
         this.id = id;
         this.nome = nome;
         this.curso = curso;
+        this.time = time;
     }
 
     @Id
@@ -30,6 +31,10 @@ public class AlunoModel implements Serializable {
     @NotNull
     @Column(name = "curso")
     private String curso;
+
+    @NotNull
+    @OneToMany
+    private TimeModel time;
 
     public Integer getId() {
         return id;
@@ -53,5 +58,13 @@ public class AlunoModel implements Serializable {
 
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+
+    public TimeModel getTime() {
+        return time;
+    }
+
+    public void setTime(TimeModel time) {
+        this.time = time;
     }
 }
