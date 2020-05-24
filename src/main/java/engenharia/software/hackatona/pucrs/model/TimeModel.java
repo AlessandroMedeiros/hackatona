@@ -52,4 +52,9 @@ public class TimeModel implements Serializable {
     public void setAlunos(List<AlunoModel> alunos) {
         this.alunos = alunos;
     }
+
+    @Override
+    public String toString() {
+        return "id: " + this.id + " nome: " + this.nome;
+    }
 }

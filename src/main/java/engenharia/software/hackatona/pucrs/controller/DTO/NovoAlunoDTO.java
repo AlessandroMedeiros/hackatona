@@ -9,15 +9,15 @@ public class NovoAlunoDTO implements Serializable {
     private Integer id;
     private String nome;
     private String curso;
-    private TimeModel timeModel;
+    private TimeModel time;
 
     public NovoAlunoDTO(){}
 
-    public NovoAlunoDTO(Integer id, String nome, String curso, TimeModel idTime) {
+    public NovoAlunoDTO(Integer id, String nome, String curso, TimeModel time) {
         this.id = id;
         this.nome = nome;
         this.curso = curso;
-        this.timeModel = timeModel;
+        this.time = time;
     }
 
     public Integer getId() {
@@ -37,18 +37,18 @@ public class NovoAlunoDTO implements Serializable {
     }
 
     public String getCurso() {
-        return curso;
+        return this.curso;
     }
 
     public void setCurso(String curso) {
         this.curso = curso;
     }
 
-    public TimeModel getTimeModel() {
-        return timeModel;
+    public TimeModel getTime() {
+        return this.time;
     }
 
-    public void setTimeModel(TimeModel timeModel) {
-        this.timeModel = timeModel;
+    public void setTime(TimeModel timeModel) {
+        this.time = timeModel;
     }
 }

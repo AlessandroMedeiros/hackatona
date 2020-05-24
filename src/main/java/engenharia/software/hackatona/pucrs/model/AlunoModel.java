@@ -13,7 +13,7 @@ public class AlunoModel implements Serializable {
     public AlunoModel() {
     }
 
-    public AlunoModel(Integer id, String nome, String curso) {
+    public AlunoModel(Integer id, String nome, String curso, TimeModel time) {
         this.id = id;
         this.nome = nome;
         this.curso = curso;
@@ -33,7 +33,7 @@ public class AlunoModel implements Serializable {
     private String curso;
 
     @NotNull
-    @OneToMany
+    @ManyToOne
     private TimeModel time;
 
     public Integer getId() {
