@@ -20,7 +20,7 @@ public class AlunoService {
     }
 
     public AlunoModel adicionarAluno(NovoAlunoDTO novoAlunoDTO) {
-        AlunoModel alunoModel = new AlunoModel(novoAlunoDTO.getId(), novoAlunoDTO.getNome(), novoAlunoDTO.getCurso());
+        AlunoModel alunoModel = new AlunoModel(novoAlunoDTO.getId(), novoAlunoDTO.getNome(), novoAlunoDTO.getCurso(), novoAlunoDTO.getTime());
         alunoModel = alunoRepository.save(alunoModel);
         return alunoModel;
     }
