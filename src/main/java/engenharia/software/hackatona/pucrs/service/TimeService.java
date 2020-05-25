@@ -30,15 +30,21 @@ public class TimeService {
     }
 
     public boolean deletarTime(Integer id){
-        List<TimeModel> time = listarTimes();
-        //Implementar com java 8 stream, lambda, filter e forEach
-        //time.stream().filter(t -> t.equals(id)).
-        for(int i=0; i<time.size(); i++){
-            if(time.get(i).getId().equals(id)){
-                timeRepository.delete(time.get(i));
-                return true;
-            }
-        }
-        return false;
+        List<TimeModel> times = listarTimes();
+
+        TimeModel time = times
+                        .stream()
+                        .filter(t -> t.equals(id))
+                        .findFirst()
+                        .get();
+
+        if(time!=null){
+            timeRepository.delete(time);
+            return true;
+        }else return false;
+    }
+
+    public static void main(String args[]){
+
     }
 }
