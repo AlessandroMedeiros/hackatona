@@ -11,3 +11,4 @@ INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Chiara','Engenharia de Softwar
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Edson','Engenharia de Software',  1);
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Gabriel','Engenharia de Software',  1);
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('João','Engenharia de Software',  2);
+INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Maria','Administração',  1);
