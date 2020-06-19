@@ -26,4 +26,17 @@ public class AvaliacaoService {
         avaliacaoModel = avaliacaoRepository.save(avaliacaoModel);
         return avaliacaoModel;
     }
+
+    public boolean deletarAvaliacao(Integer id){
+        List<AvaliacaoModel> avaliacoes = listarAvaliacoes();
+
+        AvaliacaoModel avaliacao = avaliacoes
+                .stream()
+                .filter(a -> a.equals(id))
+                .findFirst()
+                .get();
+
+        avaliacaoRepository.delete(avaliacao);
+        return true;
+    }
 }

@@ -2,15 +2,10 @@ package engenharia.software.hackatona.pucrs.controller;
 
 
 import engenharia.software.hackatona.pucrs.controller.DTO.AvaliacaoDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.AvaliadorDTO;
 import engenharia.software.hackatona.pucrs.controller.DTO.NovaAvaliacaoDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAvaliadorDTO;
 import engenharia.software.hackatona.pucrs.model.AvaliacaoModel;
-import engenharia.software.hackatona.pucrs.model.AvaliadorModel;
 import engenharia.software.hackatona.pucrs.repository.AvaliacaoRepository;
-import engenharia.software.hackatona.pucrs.repository.AvaliadorRepository;
 import engenharia.software.hackatona.pucrs.service.AvaliacaoService;
-import engenharia.software.hackatona.pucrs.service.AvaliadorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,12 +37,12 @@ public class AvaliacaoController {
         return ResponseEntity.created(uri).body(new AvaliacaoDTO(avaliacaoModel));
     }
 
-//    @DeleteMapping(path = "/{id}")
-//    public ResponseEntity<AvaliacaoModel> deletarAvaliacao(@PathVariable Integer id){
-//        boolean isDeleted = avaliacaoService.deletarAvaliacao(id);
-//        if(isDeleted) {
-//            return new ResponseEntity<>(HttpStatus.OK);
-//        }
-//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//    }
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<AvaliacaoModel> deletarAvaliacao(@PathVariable Integer id){
+        boolean isDeleted = avaliacaoService.deletarAvaliacao(id);
+        if(isDeleted) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }

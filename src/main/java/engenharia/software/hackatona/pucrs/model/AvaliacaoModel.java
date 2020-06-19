@@ -46,6 +46,12 @@ public class AvaliacaoModel implements Serializable {
     @Column(name = "formacaoTime")
     private Integer formacaoTime;
 
+    @ManyToOne
+    private AvaliadorModel avaliador;
+
+    @ManyToOne
+    private TimeModel time;
+
     public AvaliacaoModel() {
     }
 

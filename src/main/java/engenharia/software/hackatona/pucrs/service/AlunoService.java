@@ -27,15 +27,17 @@ public class AlunoService {
 
 
     public boolean deletarAluno(Integer id){
-        List<AlunoModel> time = listarAlunos();
-        //Implementar com java 8 stream, lambda, filter e forEach
-        //time.stream().filter(t -> t.equals(id)).
-        for(int i=0; i<time.size(); i++){
-            if(time.get(i).getId().equals(id)){
-                alunoRepository.delete(time.get(i));
-                return true;
-            }
-        }
-        return false;
+        List<AlunoModel> alunos = listarAlunos();
+
+        AlunoModel al = alunos
+                .stream()
+                .filter(a -> a.equals(id))
+                .findFirst()
+                .get();
+
+        if(al!=null){
+            alunoRepository.delete(al);
+            return true;
+        }else return false;
     }
 }

@@ -38,13 +38,7 @@ public class TimeService {
                         .findFirst()
                         .get();
 
-        if(time!=null){
-            timeRepository.delete(time);
-            return true;
-        }else return false;
-    }
-
-    public static void main(String args[]){
-
+        timeRepository.delete(time);
+        return true;
     }
 }
