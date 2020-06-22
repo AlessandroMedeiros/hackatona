@@ -47,21 +47,23 @@ public class AvaliacaoModel implements Serializable {
     private Integer formacaoTime;
 
     @ManyToOne
-    private AvaliadorModel avaliador;
+    private AvaliadorModel avaliadorModel;
 
     @ManyToOne
-    private TimeModel time;
+    private TimeModel timeModel;
 
     public AvaliacaoModel() {
     }
 
-    public AvaliacaoModel(Integer id, Integer softwareFuncionando, Integer processo, Integer pictch, Integer inovacao, Integer formacaoTime) {
+    public AvaliacaoModel(Integer id, Integer softwareFuncionando, Integer processo, Integer pictch, Integer inovacao, Integer formacaoTime, AvaliadorModel avaliadorModel, TimeModel timeModel) {
         this.id = id;
         this.softwareFuncionando = softwareFuncionando;
         this.processo = processo;
         this.pictch = pictch;
         this.inovacao = inovacao;
         this.formacaoTime = formacaoTime;
+        this.avaliadorModel = avaliadorModel;
+        this.timeModel = timeModel;
     }
 
     public Integer getId() {
@@ -110,5 +112,21 @@ public class AvaliacaoModel implements Serializable {
 
     public void setFormacaoTime(Integer formacaoTime) {
         this.formacaoTime = formacaoTime;
+    }
+
+    public AvaliadorModel getAvaliadorModel() {
+        return avaliadorModel;
+    }
+
+    public void setAvaliadorModel(AvaliadorModel avaliadorModel) {
+        this.avaliadorModel = avaliadorModel;
+    }
+
+    public TimeModel getTimeModel() {
+        return timeModel;
+    }
+
+    public void setTimeModel(TimeModel timeModel) {
+        this.timeModel = timeModel;
     }
 }

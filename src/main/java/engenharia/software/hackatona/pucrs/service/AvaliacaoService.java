@@ -22,7 +22,7 @@ public class AvaliacaoService {
     }
 
     public AvaliacaoModel adicionarAvaliacao(NovaAvaliacaoDTO novaAvaliacaoDTO) {
-        AvaliacaoModel avaliacaoModel = new AvaliacaoModel(novaAvaliacaoDTO.getId(), novaAvaliacaoDTO.getSoftwareFuncionando(), novaAvaliacaoDTO.getProcesso(), novaAvaliacaoDTO.getPictch(), novaAvaliacaoDTO.getInovacao(), novaAvaliacaoDTO.getFormacaoTime());
+        AvaliacaoModel avaliacaoModel = new AvaliacaoModel(novaAvaliacaoDTO.getId(), novaAvaliacaoDTO.getSoftwareFuncionando(), novaAvaliacaoDTO.getProcesso(), novaAvaliacaoDTO.getPictch(), novaAvaliacaoDTO.getInovacao(), novaAvaliacaoDTO.getFormacaoTime(), novaAvaliacaoDTO.getAvaliadorModel(), novaAvaliacaoDTO.getTimeModel());
         avaliacaoModel = avaliacaoRepository.save(avaliacaoModel);
         return avaliacaoModel;
     }

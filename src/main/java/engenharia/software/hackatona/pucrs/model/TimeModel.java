@@ -26,9 +26,6 @@ public class TimeModel implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "time", fetch = FetchType.LAZY)
-//    private List<AlunoModel> alunos;
-
     public Integer getId() {
         return id;
     }
@@ -44,14 +41,6 @@ public class TimeModel implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-//    public List<AlunoModel> getAlunos() {
-//        return alunos;
-//    }
-//
-//    public void setAlunos(List<AlunoModel> alunos) {
-//        this.alunos = alunos;
-//    }
 
     @Override
     public String toString() {
