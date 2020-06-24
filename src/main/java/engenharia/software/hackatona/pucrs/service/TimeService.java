@@ -31,14 +31,15 @@ public class TimeService {
 
     public boolean deletarTime(Integer id){
         List<TimeModel> times = listarTimes();
-
         TimeModel time = times
-                        .stream()
-                        .filter(t -> t.equals(id))
-                        .findFirst()
-                        .get();
-
-        timeRepository.delete(time);
-        return true;
+                            .stream()
+                            .filter(a -> a.getId().equals(id))
+                            .findFirst()
+                            .get();
+        if(time!=null){
+            timeRepository.delete(time);
+            return true;
+        }
+        return false;
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlunoService {
@@ -25,19 +26,13 @@ public class AlunoService {
         return alunoModel;
     }
 
-
     public boolean deletarAluno(Integer id){
         List<AlunoModel> alunos = listarAlunos();
-
-        AlunoModel al = alunos
-                .stream()
-                .filter(a -> a.equals(id))
-                .findFirst()
-                .get();
-
-        if(al!=null){
-            alunoRepository.delete(al);
+        AlunoModel aluno = alunos.stream().filter(a -> a.getId().equals(id)).findFirst().get();
+        if(aluno!=null){
+            alunoRepository.delete(aluno);
             return true;
-        }else return false;
+        }
+        return false;
     }
 }

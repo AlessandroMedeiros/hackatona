@@ -29,14 +29,11 @@ public class AvaliacaoService {
 
     public boolean deletarAvaliacao(Integer id){
         List<AvaliacaoModel> avaliacoes = listarAvaliacoes();
-
-        AvaliacaoModel avaliacao = avaliacoes
-                .stream()
-                .filter(a -> a.equals(id))
-                .findFirst()
-                .get();
-
-        avaliacaoRepository.delete(avaliacao);
-        return true;
+        AvaliacaoModel avaliacao = avaliacoes.stream().filter(a -> a.getId().equals(id)).findFirst().get();
+        if(avaliacao!=null){
+            avaliacaoRepository.delete(avaliacao);
+            return true;
+        }
+        return false;
     }
 }

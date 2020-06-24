@@ -32,7 +32,6 @@ public class AlunoModel implements Serializable {
     @Column(name = "curso")
     private String curso;
 
-    @NotNull
     @ManyToOne
     private TimeModel time;
 
