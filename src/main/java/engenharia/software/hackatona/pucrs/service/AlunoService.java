@@ -51,4 +51,13 @@ public class AlunoService {
         }
         return true;
     }
+
+    public boolean removerTimeDeAluno(ArrayList<Integer> lista){
+        for(int i=0; i<lista.size(); i++){
+            Optional<AlunoModel> aluno = alunoRepository.findById(lista.get(i));
+            aluno.get().setTime(null);
+            alunoRepository.save(aluno.get());
+        }
+        return true;
+    }
 }

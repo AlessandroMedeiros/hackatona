@@ -37,7 +37,7 @@ public class AlunoController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<TimeModel> deletarAluno(@PathVariable Integer id){
+    public ResponseEntity<AlunoModel> deletarAluno(@PathVariable Integer id){
         boolean isDeleted = alunoService.deletarAluno(id);
         if(isDeleted) {
             return new ResponseEntity<>(HttpStatus.OK);
@@ -45,10 +45,19 @@ public class AlunoController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping
-    public ResponseEntity<TimeModel> adicionarAlunosEmTimes(@RequestBody AlunosTimesDTO alunosTimesDTO){
+    @PutMapping(path = "/adicionarAlunosEmTimes")
+    public ResponseEntity<AlunoModel> adicionarAlunosEmTimes(@RequestBody AlunosTimesDTO alunosTimesDTO){
         boolean adionado = alunoService.adicionarAlunosEmTimes(alunosTimesDTO.getIdTime(), alunosTimesDTO.getLista());
         if(adionado) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @PutMapping(path = "/removerTimeDeAluno")
+    public ResponseEntity<AlunoModel> removerTimeDeAluno(@RequestBody AlunosTimesDTO alunosTimesDTO){
+        boolean removido = alunoService.removerTimeDeAluno(alunosTimesDTO.getLista());
+        if(removido) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
