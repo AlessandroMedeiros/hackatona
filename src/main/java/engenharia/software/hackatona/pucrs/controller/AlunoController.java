@@ -29,12 +29,12 @@ public class AlunoController {
         return alunoService.listarAlunos();
     }
 
-//    @PostMapping
-//    public ResponseEntity<AlunoDTO> adicionarAluno(@RequestBody NovoAlunoDTO novoAlunoDTO) {
-//        AlunoModel usuarioModel = alunoService.adicionarAluno(novoAlunoDTO);
-//        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuarioModel.getId()).toUri();
-//        return ResponseEntity.created(uri).body(new AlunoDTO(usuarioModel));
-//    }
+    @PostMapping
+    public ResponseEntity<AlunoDTO> adicionarAluno(@RequestBody NovoAlunoDTO novoAlunoDTO) {
+        AlunoModel usuarioModel = alunoService.adicionarAluno(novoAlunoDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuarioModel.getId()).toUri();
+        return ResponseEntity.created(uri).body(new AlunoDTO(usuarioModel));
+    }
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<TimeModel> deletarAluno(@PathVariable Integer id){
@@ -45,7 +45,7 @@ public class AlunoController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping
+    @PutMapping
     public ResponseEntity<TimeModel> adicionarAlunosEmTimes(@RequestBody AlunosTimesDTO alunosTimesDTO){
         boolean adionado = alunoService.adicionarAlunosEmTimes(alunosTimesDTO.getIdTime(), alunosTimesDTO.getLista());
         if(adionado) {
