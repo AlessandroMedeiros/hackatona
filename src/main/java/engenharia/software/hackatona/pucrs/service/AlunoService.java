@@ -2,10 +2,13 @@ package engenharia.software.hackatona.pucrs.service;
 
 import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
+import engenharia.software.hackatona.pucrs.model.TimeModel;
 import engenharia.software.hackatona.pucrs.repository.AlunoRepository;
+import engenharia.software.hackatona.pucrs.repository.TimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +17,9 @@ public class AlunoService {
 
     @Autowired
     private AlunoRepository alunoRepository;
+
+    @Autowired
+    private TimeRepository timeRepository;
 
     public List<AlunoModel> listarAlunos() {
         List<AlunoModel> listaAlunos = alunoRepository.findAll();
@@ -34,5 +40,15 @@ public class AlunoService {
             return true;
         }
         return false;
+    }
+
+    public boolean adicionarAlunosEmTimes(Integer idTime, ArrayList<Integer> lista){
+        for(int i=0; i<lista.size(); i++){
+            Optional<AlunoModel> aluno = alunoRepository.findById(lista.get(i));
+            Optional<TimeModel> time = timeRepository.findById(idTime);
+            aluno.get().setTime(time.get());
+            alunoRepository.save(aluno.get());
+        }
+        return true;
     }
 }
