@@ -2,8 +2,9 @@ INSERT INTO time (NOME) VALUES ('INTER');
 INSERT INTO time (NOME) VALUES ('GREMIO');
 
 
-INSERT INTO avaliador (NOME) VALUES ('Ana Paula');
-INSERT INTO avaliador (NOME) VALUES ('Cassio');
+INSERT INTO avaliador (NOME, EMAIL) VALUES ('Ana Paula', 'anapaula@pucrs.br');
+INSERT INTO avaliador (NOME, EMAIL) VALUES ('Cassio', 'cassio@pucrs.br');
+INSERT INTO avaliador (NOME, EMAIL) VALUES ('Gabriel Correa', 'binhosckina@gmail.com');
 
 
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('alessandro','Engenharia de Software',  1);
@@ -14,7 +15,6 @@ INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('João','Engenharia de Software
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Ciclano','Medicina', null);
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Beltrano','Odontologia', null);
 INSERT INTO ALUNO (NOME, CURSO, TIME_ID) values ('Fulano','Piscologia', null);
-
 
 
 INSERT INTO AVALIACAO (SOFTWARE_FUNCIONANDO, PROCESSO, PICTCH, INOVACAO, FORMACAO_TIME, AVALIADOR_MODEL_ID, TIME_MODEL_ID) VALUES (5,4,3,4,5,1,1);

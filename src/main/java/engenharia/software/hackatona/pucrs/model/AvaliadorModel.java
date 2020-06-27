@@ -12,9 +12,10 @@ public class AvaliadorModel implements Serializable {
     public AvaliadorModel(){
     }
 
-    public AvaliadorModel(Integer id, String nome) {
+    public AvaliadorModel(Integer id, String nome, String email) {
         this.id = id;
         this.nome = nome;
+        this.email = email;
     }
 
     @Id
@@ -24,6 +25,10 @@ public class AvaliadorModel implements Serializable {
     @NotNull
     @Column(name = "nome")
     private String nome;
+
+    @NotNull
+    @Column(name = "email")
+    private String email;
 
     public Integer getId() {
         return id;
@@ -39,5 +44,13 @@ public class AvaliadorModel implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

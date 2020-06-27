@@ -1,8 +1,6 @@
 package engenharia.software.hackatona.pucrs.service;
 
 import engenharia.software.hackatona.pucrs.controller.DTO.NovaAvaliacaoDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
-import engenharia.software.hackatona.pucrs.model.AlunoModel;
 import engenharia.software.hackatona.pucrs.model.AvaliacaoModel;
 import engenharia.software.hackatona.pucrs.repository.AvaliacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
