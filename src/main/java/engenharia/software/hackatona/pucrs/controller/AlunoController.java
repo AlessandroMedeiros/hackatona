@@ -30,14 +30,14 @@ public class AlunoController {
     }
 
     @PostMapping
-    public ResponseEntity<AlunoDTO> adicionarAluno(@RequestBody NovoAlunoDTO novoAlunoDTO) {
-        AlunoModel usuarioModel = alunoService.adicionarAluno(novoAlunoDTO);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuarioModel.getId()).toUri();
-        return ResponseEntity.created(uri).body(new AlunoDTO(usuarioModel));
+    public ResponseEntity<AlunoModel> adicionarAluno(@RequestBody NovoAlunoDTO novoAlunoDTO) {
+        AlunoModel alunoModel = alunoService.adicionarAluno(novoAlunoDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(alunoModel.getId()).toUri();
+        return ResponseEntity.created(uri).body(alunoModel);
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<AlunoModel> deletarAluno(@PathVariable Integer id){
+    public ResponseEntity<AlunoDTO> deletarAluno(@PathVariable Integer id){
         boolean isDeleted = alunoService.deletarAluno(id);
         if(isDeleted) {
             return new ResponseEntity<>(HttpStatus.OK);

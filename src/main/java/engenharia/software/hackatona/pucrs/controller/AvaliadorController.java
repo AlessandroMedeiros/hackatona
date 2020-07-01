@@ -31,10 +31,10 @@ public class AvaliadorController {
     }
 
     @PostMapping
-    public ResponseEntity<AvaliadorDTO> adicionarAvaliador(@RequestBody NovoAvaliadorDTO novoAvaliadorDTO) {
+    public ResponseEntity<AvaliadorModel> adicionarAvaliador(@RequestBody NovoAvaliadorDTO novoAvaliadorDTO) {
         AvaliadorModel avaliadorModel = avaliadorService.adicionarAvaliador(novoAvaliadorDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(avaliadorModel.getId()).toUri();
-        return ResponseEntity.created(uri).body(new AvaliadorDTO(avaliadorModel));
+        return ResponseEntity.created(uri).body(avaliadorModel);
     }
 
     @DeleteMapping(path = "/{id}")

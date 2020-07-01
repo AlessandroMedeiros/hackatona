@@ -34,14 +34,14 @@ public class AvaliacaoController {
     }
 
     @PostMapping
-    public ResponseEntity<AvaliacaoDTO> adicionarAvaliacao(@RequestBody NovaAvaliacaoDTO novaAvaliacaoDTO, @RequestHeader HttpHeaders headers) {
+    public ResponseEntity<AvaliacaoModel> adicionarAvaliacao(@RequestBody NovaAvaliacaoDTO novaAvaliacaoDTO, @RequestHeader HttpHeaders headers) {
         TokenService tokenService = new TokenService();
         String token = tokenService.recuperarToken(headers);
         boolean achouUsuario = avaliadorService.getUsuario(token);
         if(achouUsuario){
             AvaliacaoModel avaliacaoModel = avaliacaoService.adicionarAvaliacao(novaAvaliacaoDTO);
             URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(avaliacaoModel.getId()).toUri();
-            return ResponseEntity.created(uri).body(new AvaliacaoDTO(avaliacaoModel));
+            return ResponseEntity.created(uri).body(avaliacaoModel);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
