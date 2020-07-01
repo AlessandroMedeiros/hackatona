@@ -11,6 +11,7 @@ public class NovoTimeDTO implements Serializable {
 
     public NovoTimeDTO(Integer id, String nome) {
         this.id = id;
+        
         this.nome = nome;
     }
 

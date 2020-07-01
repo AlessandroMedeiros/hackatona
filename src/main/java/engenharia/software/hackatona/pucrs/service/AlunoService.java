@@ -1,5 +1,9 @@
 package engenharia.software.hackatona.pucrs.service;
 
+import engenharia.software.hackatona.observer.DeletarAlunoDoTimeObserver;
+import engenharia.software.hackatona.observer.DeletarObserver;
+import engenharia.software.hackatona.observer.ObserverModule;
+import engenharia.software.hackatona.observer.event.DeletarAlunoDoTimeEvent;
 import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
 import engenharia.software.hackatona.pucrs.model.TimeModel;
@@ -33,12 +37,28 @@ public class AlunoService {
     }
 
     public boolean deletarAluno(Integer id){
+    	
         List<AlunoModel> alunos = listarAlunos();
         AlunoModel aluno = alunos.stream().filter(a -> a.getId().equals(id)).findFirst().get();
+        
+		ObserverModule observer = new ObserverModule();
+		observer.updateInstance(this);
+		DeletarObserver.getInstance().addProdutoDescontoObserver(observer);
+        
         if(aluno!=null){
+        	
+        	DeletarAlunoDoTimeEvent event = new DeletarAlunoDoTimeEvent(aluno);
+        	
+        	for(DeletarAlunoDoTimeObserver observerObject : DeletarObserver.getInstance().getObserver()) {
+        		observer.deletarDoTime(event);
+        	}
+        	
             alunoRepository.delete(aluno);
             return true;
         }
+        
+        
+        
         return false;
     }
 
@@ -59,5 +79,13 @@ public class AlunoService {
             alunoRepository.save(aluno.get());
         }
         return true;
+    }
+    
+    public boolean removerTimeDeAluno(Integer id) {
+    	Optional<AlunoModel> aluno = alunoRepository.findById(id);
+    	aluno.get().setTime(null);
+    	alunoRepository.save(aluno.get());
+    	
+    	return true;
     }
 }
