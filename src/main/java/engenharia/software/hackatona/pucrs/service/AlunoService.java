@@ -40,17 +40,15 @@ public class AlunoService {
     	
         List<AlunoModel> alunos = listarAlunos();
         AlunoModel aluno = alunos.stream().filter(a -> a.getId().equals(id)).findFirst().get();
-        
-		ObserverModule observer = new ObserverModule();
-		observer.updateInstance(this);
-		DeletarObserver.getInstance().addProdutoDescontoObserver(observer);
+       
+		DeletarObserver.getInstance().addProdutoDescontoObserver(new ObserverModule(this));
         
         if(aluno!=null){
         	
         	DeletarAlunoDoTimeEvent event = new DeletarAlunoDoTimeEvent(aluno);
         	
         	for(DeletarAlunoDoTimeObserver observerObject : DeletarObserver.getInstance().getObserver()) {
-        		observer.deletarDoTime(event);
+        		observerObject.deletarDoTime(event);
         	}
         	
             alunoRepository.delete(aluno);

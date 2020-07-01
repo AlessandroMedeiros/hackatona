@@ -13,7 +13,6 @@ public class Application {
 
 	public static void main(String[] args) {
 		DeletarObserver.getInstance().start();
-		
 		SpringApplication.run(Application.class, args);
 	}
 }

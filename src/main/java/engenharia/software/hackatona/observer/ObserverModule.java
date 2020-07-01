@@ -7,8 +7,8 @@ public class ObserverModule implements DeletarAlunoDoTimeObserver {
 
 	private AlunoService service;
 	
-	public void updateInstance(AlunoService instance) {
-		this.service = instance;
+	public ObserverModule(AlunoService service) {
+		this.service = service;
 	}
 	
 	@Override
