@@ -17,7 +17,7 @@ public class DeletarObserver extends Thread {
 		return instance;
 	}
 	
-	public void addProdutoDescontoObserver(DeletarAlunoDoTimeObserver observer) {		
+	public void addDeletarAlunoDoTimeObserver(DeletarAlunoDoTimeObserver observer) {		
 		this.observer.add(observer);
 	}
 	
