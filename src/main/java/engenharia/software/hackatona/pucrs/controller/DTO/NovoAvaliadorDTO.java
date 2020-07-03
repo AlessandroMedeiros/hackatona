@@ -2,7 +2,7 @@ package engenharia.software.hackatona.pucrs.controller.DTO;
 
 import java.io.Serializable;
 
-public class NovoAvaliadorDTO implements Serializable{
+public class NovoAvaliadorDTO implements Serializable {
 
     private Integer id;
     private String nome;

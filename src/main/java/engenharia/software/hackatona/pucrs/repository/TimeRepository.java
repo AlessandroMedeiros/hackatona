@@ -7,9 +7,7 @@ import java.util.Optional;
 
 public interface TimeRepository extends JpaRepository<TimeModel, Integer> {
 
-
     Optional<TimeModel> findByNome(String nome);
 
     Optional<TimeModel> findById(Integer id);
-
 }

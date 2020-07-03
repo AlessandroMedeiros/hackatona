@@ -1,6 +1,5 @@
 package engenharia.software.hackatona.pucrs.controller;
 
-import engenharia.software.hackatona.pucrs.controller.DTO.AlunoDTO;
 import engenharia.software.hackatona.pucrs.controller.DTO.NovoTimeDTO;
 import engenharia.software.hackatona.pucrs.controller.DTO.TimeDTO;
 import engenharia.software.hackatona.pucrs.model.TimeModel;
@@ -34,11 +33,11 @@ public class TimeController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<TimeModel> deletarTime(@PathVariable Integer id){
-       boolean isDeleted =  timeService.deletarTime(id);
-       if(isDeleted){
-           return new ResponseEntity<>(HttpStatus.OK);
-       }
+    public ResponseEntity<TimeModel> deletarTime(@PathVariable Integer id) {
+        boolean isDeleted = timeService.deletarTime(id);
+        if (isDeleted) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

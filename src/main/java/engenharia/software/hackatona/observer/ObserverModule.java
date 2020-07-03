@@ -5,18 +5,14 @@ import engenharia.software.hackatona.pucrs.service.AlunoService;
 
 public class ObserverModule implements DeletarAlunoDoTimeObserver {
 
-	private AlunoService service;
-	
-	public ObserverModule(AlunoService service) {
-		this.service = service;
-	}
-	
-	@Override
-	public void deletarDoTime(DeletarAlunoDoTimeEvent event) {
-		
-		System.out.println("ObserverModule class.");
-		this.service.removerTimeDeAluno(event.getAluno().getId());
-		
-	}
+    private AlunoService service;
 
+    public ObserverModule(AlunoService service) {
+        this.service = service;
+    }
+
+    @Override
+    public void deletarDoTime(DeletarAlunoDoTimeEvent event) {
+        this.service.removerTimeDeAluno(event.getAluno().getId());
+    }
 }

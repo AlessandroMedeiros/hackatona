@@ -1,7 +1,5 @@
 package engenharia.software.hackatona.pucrs.controller;
 
-import engenharia.software.hackatona.pucrs.controller.DTO.AlunoDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.AvaliadorDTO;
 import engenharia.software.hackatona.pucrs.controller.DTO.NovoAvaliadorDTO;
 import engenharia.software.hackatona.pucrs.model.AvaliadorModel;
 import engenharia.software.hackatona.pucrs.repository.AvaliadorRepository;
@@ -38,9 +36,9 @@ public class AvaliadorController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<AvaliadorModel> deletarAvaliador(@PathVariable Integer id){
+    public ResponseEntity<AvaliadorModel> deletarAvaliador(@PathVariable Integer id) {
         boolean isDeleted = avaliadorService.deletarAvaliador(id);
-        if(isDeleted) {
+        if (isDeleted) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

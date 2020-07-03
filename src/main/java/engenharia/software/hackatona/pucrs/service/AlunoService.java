@@ -36,32 +36,30 @@ public class AlunoService {
         return alunoModel;
     }
 
-    public boolean deletarAluno(Integer id){
-    	
+    public boolean deletarAluno(Integer id) {
+
         List<AlunoModel> alunos = listarAlunos();
         AlunoModel aluno = alunos.stream().filter(a -> a.getId().equals(id)).findFirst().get();
-       
-		DeletarObserver.getInstance().addProdutoDescontoObserver(new ObserverModule(this));
-        
-        if(aluno!=null){
-        	
-        	DeletarAlunoDoTimeEvent event = new DeletarAlunoDoTimeEvent(aluno);
-        	
-        	for(DeletarAlunoDoTimeObserver observerObject : DeletarObserver.getInstance().getObserver()) {
-        		observerObject.deletarDoTime(event);
-        	}
-        	
+
+        DeletarObserver.getInstance().addProdutoDescontoObserver(new ObserverModule(this));
+
+        if (aluno != null) {
+
+            DeletarAlunoDoTimeEvent event = new DeletarAlunoDoTimeEvent(aluno);
+
+            for (DeletarAlunoDoTimeObserver observerObject : DeletarObserver.getInstance().getObserver()) {
+                observerObject.deletarDoTime(event);
+            }
+
             alunoRepository.delete(aluno);
             return true;
         }
-        
-        
-        
+
         return false;
     }
 
-    public boolean adicionarAlunosEmTimes(Integer idTime, ArrayList<Integer> lista){
-        for(int i=0; i<lista.size(); i++){
+    public boolean adicionarAlunosEmTimes(Integer idTime, ArrayList<Integer> lista) {
+        for (int i = 0; i < lista.size(); i++) {
             Optional<AlunoModel> aluno = alunoRepository.findById(lista.get(i));
             Optional<TimeModel> time = timeRepository.findById(idTime);
             aluno.get().setTime(time.get());
@@ -70,20 +68,19 @@ public class AlunoService {
         return true;
     }
 
-    public boolean removerTimeDeAluno(ArrayList<Integer> lista){
-        for(int i=0; i<lista.size(); i++){
+    public boolean removerTimeDeAluno(ArrayList<Integer> lista) {
+        for (int i = 0; i < lista.size(); i++) {
             Optional<AlunoModel> aluno = alunoRepository.findById(lista.get(i));
             aluno.get().setTime(null);
             alunoRepository.save(aluno.get());
         }
         return true;
     }
-    
+
     public boolean removerTimeDeAluno(Integer id) {
-    	Optional<AlunoModel> aluno = alunoRepository.findById(id);
-    	aluno.get().setTime(null);
-    	alunoRepository.save(aluno.get());
-    	
-    	return true;
+        Optional<AlunoModel> aluno = alunoRepository.findById(id);
+        aluno.get().setTime(null);
+        alunoRepository.save(aluno.get());
+        return true;
     }
 }

@@ -14,27 +14,25 @@ public class ConferenciaService {
     @Autowired
     private AlunoRepository alunoRepository;
 
-    public boolean validarTime(Integer idTime){
+    public boolean validarTime(Integer idTime) {
 
         List<AlunoModel> listaAlunos = alunoRepository.findAll();
         List<AlunoModel> novaLista = new ArrayList<>();
 
-        for(int i=0; i<listaAlunos.size(); i++){
+        for (int i = 0; i < listaAlunos.size(); i++) {
             boolean aux = listaAlunos.get(i).getTime().getId().equals(idTime);
-            if(aux){
+            if (aux) {
                 novaLista.add(listaAlunos.get(i));
             }
         }
 
-        for(int i=0; i<novaLista.size(); i++){
-            for(int j=0; j<novaLista.size(); j++){
-                if(!novaLista.get(i).getCurso().equals(novaLista.get(j).getCurso())){
-                    System.out.println("Grupo eh valido // arrumar");
+        for (int i = 0; i < novaLista.size(); i++) {
+            for (int j = 0; j < novaLista.size(); j++) {
+                if (!novaLista.get(i).getCurso().equals(novaLista.get(j).getCurso())) {
                     return true;
                 }
             }
         }
-        System.out.println("Grupo não é valido // arrumar");
         return false;
     }
 }

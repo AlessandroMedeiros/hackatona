@@ -4,13 +4,12 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "time")
 public class TimeModel implements Serializable {
 
-    public TimeModel(){
+    public TimeModel() {
     }
 
     public TimeModel(Integer id, String nome) {

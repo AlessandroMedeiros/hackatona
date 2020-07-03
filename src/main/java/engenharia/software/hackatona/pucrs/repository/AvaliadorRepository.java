@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface AvaliadorRepository extends JpaRepository<AvaliadorModel, Integer> {
 
-        Optional<AvaliadorModel> findByNome(String nome);
+    Optional<AvaliadorModel> findByNome(String nome);
 
-        Optional<AvaliadorModel> findById(Integer id);
+    Optional<AvaliadorModel> findById(Integer id);
 
-        Optional<AvaliadorModel> findByEmail(String email);
+    Optional<AvaliadorModel> findByEmail(String email);
 }
