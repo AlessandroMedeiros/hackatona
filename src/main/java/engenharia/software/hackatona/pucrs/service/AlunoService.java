@@ -37,26 +37,24 @@ public class AlunoService {
     }
 
     public boolean deletarAluno(Integer id){
-    	
+
         List<AlunoModel> alunos = listarAlunos();
         AlunoModel aluno = alunos.stream().filter(a -> a.getId().equals(id)).findFirst().get();
-       
+
 		DeletarObserver.getInstance().addProdutoDescontoObserver(new ObserverModule(this));
-        
+
         if(aluno!=null){
-        	
+
         	DeletarAlunoDoTimeEvent event = new DeletarAlunoDoTimeEvent(aluno);
-        	
+
         	for(DeletarAlunoDoTimeObserver observerObject : DeletarObserver.getInstance().getObserver()) {
         		observerObject.deletarDoTime(event);
         	}
-        	
+
             alunoRepository.delete(aluno);
             return true;
         }
-        
-        
-        
+
         return false;
     }
 
@@ -78,12 +76,12 @@ public class AlunoService {
         }
         return true;
     }
-    
+
     public boolean removerTimeDeAluno(Integer id) {
     	Optional<AlunoModel> aluno = alunoRepository.findById(id);
     	aluno.get().setTime(null);
     	alunoRepository.save(aluno.get());
-    	
+
     	return true;
     }
 }

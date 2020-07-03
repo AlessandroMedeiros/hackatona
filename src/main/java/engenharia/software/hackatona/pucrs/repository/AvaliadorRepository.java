@@ -10,6 +10,4 @@ public interface AvaliadorRepository extends JpaRepository<AvaliadorModel, Integ
         Optional<AvaliadorModel> findByNome(String nome);
 
         Optional<AvaliadorModel> findById(Integer id);
-
-        Optional<AvaliadorModel> findByEmail(String email);
 }
