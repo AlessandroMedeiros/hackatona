@@ -1,15 +1,11 @@
 package engenharia.software.hackatona.pucrs.service;
 
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.controller.DTO.NovoTimeDTO;
-import engenharia.software.hackatona.pucrs.model.AlunoModel;
 import engenharia.software.hackatona.pucrs.model.TimeModel;
-import engenharia.software.hackatona.pucrs.repository.AlunoRepository;
 import engenharia.software.hackatona.pucrs.repository.TimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,14 +25,14 @@ public class TimeService {
         return timeModel;
     }
 
-    public boolean deletarTime(Integer id){
+    public boolean deletarTime(Integer id) {
         List<TimeModel> times = listarTimes();
         TimeModel time = times
-                            .stream()
-                            .filter(a -> a.getId().equals(id))
-                            .findFirst()
-                            .get();
-        if(time!=null){
+                .stream()
+                .filter(a -> a.getId().equals(id))
+                .findFirst()
+                .get();
+        if (time != null) {
             timeRepository.delete(time);
             return true;
         }

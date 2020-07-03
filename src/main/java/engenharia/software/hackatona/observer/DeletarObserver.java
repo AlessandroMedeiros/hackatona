@@ -33,5 +33,4 @@ public class DeletarObserver extends Thread {
 
 	@Override
 	public void run() { }
-	
 }

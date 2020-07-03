@@ -7,11 +7,12 @@ public class NovoTimeDTO implements Serializable {
     private Integer id;
     private String nome;
 
-    public NovoTimeDTO(){}
+    public NovoTimeDTO() {
+    }
 
     public NovoTimeDTO(Integer id, String nome) {
         this.id = id;
-        
+
         this.nome = nome;
     }
 

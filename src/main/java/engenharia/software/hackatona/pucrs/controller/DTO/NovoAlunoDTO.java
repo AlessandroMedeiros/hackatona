@@ -11,7 +11,8 @@ public class NovoAlunoDTO implements Serializable {
     private String curso;
     private TimeModel time;
 
-    public NovoAlunoDTO(){}
+    public NovoAlunoDTO() {
+    }
 
     public NovoAlunoDTO(Integer id, String nome, String curso, TimeModel time) {
         this.id = id;

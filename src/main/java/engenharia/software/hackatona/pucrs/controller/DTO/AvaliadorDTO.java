@@ -4,7 +4,7 @@ import engenharia.software.hackatona.pucrs.model.AvaliadorModel;
 
 import java.io.Serializable;
 
-public class AvaliadorDTO implements Serializable{
+public class AvaliadorDTO implements Serializable {
 
     private Integer id;
     private String nome;

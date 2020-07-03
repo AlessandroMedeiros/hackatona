@@ -17,6 +17,5 @@ public class SwaggerConfigurations {
                 .apis(RequestHandlerSelectors.basePackage("engenharia.software.hackatona.pucrs"))
                 .paths(PathSelectors.ant("/**"))
                 .build();
-                //.ignoredParameterTypes(UsuarioModel.class);
     }
 }

@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Table(name = "avaliador")
 public class AvaliadorModel implements Serializable {
 
-    public AvaliadorModel(){
+    public AvaliadorModel() {
     }
 
     public AvaliadorModel(Integer id, String nome, String email) {

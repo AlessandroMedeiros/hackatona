@@ -1,13 +1,11 @@
 package engenharia.software.hackatona.pucrs.controller;
 
 
-import engenharia.software.hackatona.pucrs.service.AvaliadorService;
-import engenharia.software.hackatona.pucrs.service.TokenService;
-import engenharia.software.hackatona.pucrs.controller.DTO.AvaliacaoDTO;
 import engenharia.software.hackatona.pucrs.controller.DTO.NovaAvaliacaoDTO;
 import engenharia.software.hackatona.pucrs.model.AvaliacaoModel;
-import engenharia.software.hackatona.pucrs.repository.AvaliacaoRepository;
 import engenharia.software.hackatona.pucrs.service.AvaliacaoService;
+import engenharia.software.hackatona.pucrs.service.AvaliadorService;
+import engenharia.software.hackatona.pucrs.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -38,7 +36,7 @@ public class AvaliacaoController {
         TokenService tokenService = new TokenService();
         String token = tokenService.recuperarToken(headers);
         boolean achouUsuario = avaliadorService.getUsuario(token);
-        if(achouUsuario){
+        if (achouUsuario) {
             AvaliacaoModel avaliacaoModel = avaliacaoService.adicionarAvaliacao(novaAvaliacaoDTO);
             URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(avaliacaoModel.getId()).toUri();
             return ResponseEntity.created(uri).body(avaliacaoModel);
@@ -47,9 +45,9 @@ public class AvaliacaoController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<AvaliacaoModel> deletarAvaliacao(@PathVariable Integer id){
+    public ResponseEntity<AvaliacaoModel> deletarAvaliacao(@PathVariable Integer id) {
         boolean isDeleted = avaliacaoService.deletarAvaliacao(id);
-        if(isDeleted) {
+        if (isDeleted) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
