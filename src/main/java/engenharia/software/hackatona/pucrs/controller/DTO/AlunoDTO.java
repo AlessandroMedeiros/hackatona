@@ -3,7 +3,11 @@ package engenharia.software.hackatona.pucrs.controller.DTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
 
 import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class AlunoDTO implements Serializable {
 
     private Integer id;
@@ -18,30 +22,6 @@ public class AlunoDTO implements Serializable {
 
     public AlunoDTO(String nome, String curso) {
         this.nome = nome;
-        this.curso = curso;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCurso() {
-        return curso;
-    }
-
-    public void setCurso(String curso) {
         this.curso = curso;
     }
 }
