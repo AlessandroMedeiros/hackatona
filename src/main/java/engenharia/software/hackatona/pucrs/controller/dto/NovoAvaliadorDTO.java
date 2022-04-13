@@ -1,18 +1,18 @@
-package engenharia.software.hackatona.pucrs.controller.DTO;
+package engenharia.software.hackatona.pucrs.controller.dto;
 
 import java.io.Serializable;
 
-public class NovoTimeDTO implements Serializable {
+public class NovoAvaliadorDTO implements Serializable {
 
     private Integer id;
     private String nome;
+    private String email;
 
-    public NovoTimeDTO() {
+    public NovoAvaliadorDTO() {
     }
 
-    public NovoTimeDTO(Integer id, String nome) {
+    public NovoAvaliadorDTO(Integer id, String nome, String email) {
         this.id = id;
-
         this.nome = nome;
     }
 
@@ -30,5 +30,13 @@ public class NovoTimeDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

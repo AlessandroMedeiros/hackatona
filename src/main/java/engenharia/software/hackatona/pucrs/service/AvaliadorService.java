@@ -2,7 +2,7 @@ package engenharia.software.hackatona.pucrs.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAvaliadorDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.NovoAvaliadorDTO;
 import engenharia.software.hackatona.pucrs.model.AvaliadorModel;
 import engenharia.software.hackatona.pucrs.repository.AvaliadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

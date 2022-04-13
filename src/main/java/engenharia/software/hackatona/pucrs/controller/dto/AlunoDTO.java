@@ -1,24 +1,24 @@
-package engenharia.software.hackatona.pucrs.controller.DTO;
+package engenharia.software.hackatona.pucrs.controller.dto;
 
-import engenharia.software.hackatona.pucrs.model.TimeModel;
+import engenharia.software.hackatona.pucrs.model.AlunoModel;
 
 import java.io.Serializable;
 
-public class NovoAlunoDTO implements Serializable {
+public class AlunoDTO implements Serializable {
 
     private Integer id;
     private String nome;
     private String curso;
-    private TimeModel time;
 
-    public NovoAlunoDTO() {
+    public AlunoDTO(AlunoModel alunoModel) {
+        this.id = alunoModel.getId();
+        this.nome = alunoModel.getNome();
+        this.curso = alunoModel.getCurso();
     }
 
-    public NovoAlunoDTO(Integer id, String nome, String curso, TimeModel time) {
-        this.id = id;
+    public AlunoDTO(String nome, String curso) {
         this.nome = nome;
         this.curso = curso;
-        this.time = time;
     }
 
     public Integer getId() {
@@ -38,18 +38,10 @@ public class NovoAlunoDTO implements Serializable {
     }
 
     public String getCurso() {
-        return this.curso;
+        return curso;
     }
 
     public void setCurso(String curso) {
         this.curso = curso;
-    }
-
-    public TimeModel getTime() {
-        return this.time;
-    }
-
-    public void setTime(TimeModel timeModel) {
-        this.time = timeModel;
     }
 }

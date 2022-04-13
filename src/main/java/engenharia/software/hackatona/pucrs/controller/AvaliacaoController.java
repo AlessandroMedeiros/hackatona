@@ -1,7 +1,7 @@
 package engenharia.software.hackatona.pucrs.controller;
 
 
-import engenharia.software.hackatona.pucrs.controller.DTO.NovaAvaliacaoDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.NovaAvaliacaoDTO;
 import engenharia.software.hackatona.pucrs.model.AvaliacaoModel;
 import engenharia.software.hackatona.pucrs.service.AvaliacaoService;
 import engenharia.software.hackatona.pucrs.service.AvaliadorService;

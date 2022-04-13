@@ -1,6 +1,6 @@
 package engenharia.software.hackatona.pucrs.controller;
 
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAvaliadorDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.NovoAvaliadorDTO;
 import engenharia.software.hackatona.pucrs.model.AvaliadorModel;
 import engenharia.software.hackatona.pucrs.repository.AvaliadorRepository;
 import engenharia.software.hackatona.pucrs.service.AvaliadorService;

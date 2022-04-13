@@ -1,4 +1,4 @@
-package engenharia.software.hackatona.pucrs.controller.DTO;
+package engenharia.software.hackatona.pucrs.controller.dto;
 
 import engenharia.software.hackatona.pucrs.model.AvaliacaoModel;
 

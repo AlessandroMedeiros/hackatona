@@ -1,8 +1,8 @@
 package engenharia.software.hackatona.pucrs.controller;
 
-import engenharia.software.hackatona.pucrs.controller.DTO.AlunoDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.AlunosTimesDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.AlunoDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.AlunosTimesDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
 import engenharia.software.hackatona.pucrs.service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
