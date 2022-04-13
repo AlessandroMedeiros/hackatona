@@ -1,6 +1,11 @@
 package engenharia.software.hackatona.pucrs.controller.DTO;
 
 import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 public class NovoTimeDTO implements Serializable {
 
@@ -16,19 +21,5 @@ public class NovoTimeDTO implements Serializable {
         this.nome = nome;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 }
