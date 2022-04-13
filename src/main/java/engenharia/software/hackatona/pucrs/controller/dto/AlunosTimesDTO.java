@@ -1,25 +1,14 @@
 package engenharia.software.hackatona.pucrs.controller.dto;
-
 import java.util.ArrayList;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class AlunosTimesDTO {
 
     private Integer idTime;
     private ArrayList<Integer> lista;
 
-    public Integer getIdTime() {
-        return idTime;
-    }
-
-    public void setIdTime(Integer idTime) {
-        this.idTime = idTime;
-    }
-
-    public ArrayList<Integer> getLista() {
-        return lista;
-    }
-
-    public void setLista(ArrayList<Integer> lista) {
-        this.lista = lista;
-    }
 }

@@ -3,6 +3,11 @@ package engenharia.software.hackatona.pucrs.controller.dto;
 import engenharia.software.hackatona.pucrs.model.TimeModel;
 
 import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 public class NovoAlunoDTO implements Serializable {
 
@@ -19,37 +24,5 @@ public class NovoAlunoDTO implements Serializable {
         this.nome = nome;
         this.curso = curso;
         this.time = time;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCurso() {
-        return this.curso;
-    }
-
-    public void setCurso(String curso) {
-        this.curso = curso;
-    }
-
-    public TimeModel getTime() {
-        return this.time;
-    }
-
-    public void setTime(TimeModel timeModel) {
-        this.time = timeModel;
     }
 }
