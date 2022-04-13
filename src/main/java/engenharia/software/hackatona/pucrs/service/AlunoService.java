@@ -4,7 +4,7 @@ import engenharia.software.hackatona.observer.DeletarAlunoDoTimeObserver;
 import engenharia.software.hackatona.observer.DeletarObserver;
 import engenharia.software.hackatona.observer.ObserverModule;
 import engenharia.software.hackatona.observer.event.DeletarAlunoDoTimeEvent;
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoAlunoDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
 import engenharia.software.hackatona.pucrs.model.TimeModel;
 import engenharia.software.hackatona.pucrs.repository.AlunoRepository;

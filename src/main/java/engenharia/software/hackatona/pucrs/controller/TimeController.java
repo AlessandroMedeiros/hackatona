@@ -1,7 +1,7 @@
 package engenharia.software.hackatona.pucrs.controller;
 
-import engenharia.software.hackatona.pucrs.controller.DTO.NovoTimeDTO;
-import engenharia.software.hackatona.pucrs.controller.DTO.TimeDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.NovoTimeDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.TimeDTO;
 import engenharia.software.hackatona.pucrs.model.TimeModel;
 import engenharia.software.hackatona.pucrs.service.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;

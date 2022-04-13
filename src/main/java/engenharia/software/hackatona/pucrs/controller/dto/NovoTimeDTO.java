@@ -1,20 +1,18 @@
-package engenharia.software.hackatona.pucrs.controller.DTO;
-
-import engenharia.software.hackatona.pucrs.model.AvaliadorModel;
+package engenharia.software.hackatona.pucrs.controller.dto;
 
 import java.io.Serializable;
 
-public class AvaliadorDTO implements Serializable {
+public class NovoTimeDTO implements Serializable {
 
     private Integer id;
     private String nome;
 
-    public AvaliadorDTO(AvaliadorModel avaliadorModel) {
-        this.id = avaliadorModel.getId();
-        this.nome = avaliadorModel.getNome();
+    public NovoTimeDTO() {
     }
 
-    public AvaliadorDTO(String nome) {
+    public NovoTimeDTO(Integer id, String nome) {
+        this.id = id;
+
         this.nome = nome;
     }
 
