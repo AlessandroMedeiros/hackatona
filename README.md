@@ -1,3 +1,8 @@
+<b>SonarCloud Badge</b>
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AlessandroMedeiros_hackatona&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=AlessandroMedeiros_hackatona)
+
+<br>
 <b>Bem-vindo ao sistema de simulação de hackatona da PUCRS!</b>
 <br>
 
