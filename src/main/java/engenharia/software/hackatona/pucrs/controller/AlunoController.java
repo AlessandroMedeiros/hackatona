@@ -1,6 +1,6 @@
 package engenharia.software.hackatona.pucrs.controller;
 
-import engenharia.software.hackatona.pucrs.controller.dto.AlunoDTO;
+import engenharia.software.hackatona.pucrs.controller.dto.Alunodto;
 import engenharia.software.hackatona.pucrs.controller.dto.AlunosTimesDTO;
 import engenharia.software.hackatona.pucrs.controller.dto.NovoAlunoDTO;
 import engenharia.software.hackatona.pucrs.model.AlunoModel;
